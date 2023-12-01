@@ -12,7 +12,6 @@
 	border: 2px solid black;
 	border-radius: 20px;
 	margin-bottom: 5px;
-	
 }
 
 .submit {
@@ -21,22 +20,79 @@
 	border: 2px solid black;
 	border-radius: 20px;
 }
-.year {
+.year-month-button {
+	display: flex;
+	margin: auto;
+	width: 300px;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+.calendar {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	justify-content: center;
-	gap: 10px;
-	font-size: 30px;
-	text-align: center;
-	margin: 20px;
+	margin-top: 20px;
 }
 
-.month {
+.day,
+.selected-day {
+	border: 2px solid black;
+	margin: 5px;
+	padding: 10px;
+}
+
+.selected-day {
+	background-color: aquamarine;
+}
+/*
+.App {
+	text-align: center;
+	font-size: 26px;
+}
+
+.MonthPicker,
+.YearPicker {
+	display: flex;
+	margin: auto;
+	width: 300px;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.DayPicker {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	justify-content: center;
-	gap: 10px;
-	font-size: 30px;
-	text-align: center;
-	margin: 20px;
+	margin-top: 20px;
+	border: 2px solid #000;
+	border-radius: 10px;
 }
+
+.Day,
+.DiaryDay {
+	width: 12vw;
+	margin: 3px;
+	border: 2px solid #000;
+	border-radius: 10px;
+}
+
+.DiaryDay {
+	background-color: lightblue;
+}
+
+.DiaryNote textarea {
+	width: 90%;
+	margin: 10px;
+	height: 100px;
+}
+
+.DiaryNote button {
+	margin: 10px;
+	width: 100px;
+	height: 30px;
+}
+*/
