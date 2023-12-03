@@ -110,6 +110,7 @@ function App() {
 					onChange={(event) => (text = event.target.value)}>
 					{text}
 				</textarea>
+				
 				<div>
 					{disabled && <button onClick={() => setEditing(true)}>Edit</button>}
 					{!disabled && <button onClick={submitNote}>Submit</button>}
