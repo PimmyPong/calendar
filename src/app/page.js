@@ -6,10 +6,6 @@ import Year from "./components/Year.jsx";
 import Day from "./components/Day.jsx";
 import React, { useState } from "react";
 
-// function TextArea({ text }) {
-// 	console.log("here");
-// 	return <textarea value={text} />;
-// }
 export default function Home() {
 	const [month, setMonth] = useState(new Date().getMonth());
 	const [year, setYear] = useState(new Date().getFullYear());
@@ -32,7 +28,6 @@ export default function Home() {
 				markedDay={markedDay}
 				setMarkedDay={{ setMarkedDay }}
 			/>
-			{/* <TextArea text={diary.get("" + year + month + day) || ""} /> */}
 			<Submit
 				diary={diary}
 				setDiary={setDiary}

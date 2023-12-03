@@ -2,6 +2,10 @@
 	margin: 0;
 }
 
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .diary {
 	text-align: center;
 }
@@ -16,9 +20,11 @@
 
 .submit {
 	width: 100vw;
-	height: 25px;
+	height: 30px;
 	border: 2px solid black;
 	border-radius: 20px;
+	font-weight: bold;
+	font-size: 20px;
 }
 .year-month-button {
 	display: flex;
@@ -58,61 +64,13 @@
 	border-radius: 20px;
 	margin-bottom: 5px;
 	font-size: 20px;
+	padding-left: 20px;
 }
 
 .blue-textarea {
-	background-color:rgb(144, 209, 209);
+	background-color: rgb(144, 209, 209);
 	color: rgb(236, 243, 243);
 	font-size: 20px;
 	font-weight: bolder;
 }
 
-/*
-.App {
-	text-align: center;
-	font-size: 26px;
-}
-
-.MonthPicker,
-.YearPicker {
-	display: flex;
-	margin: auto;
-	width: 300px;
-	justify-content: space-between;
-	margin-top: 20px;
-}
-
-.DayPicker {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	margin-top: 20px;
-	border: 2px solid #000;
-	border-radius: 10px;
-}
-
-.Day,
-.DiaryDay {
-	width: 12vw;
-	margin: 3px;
-	border: 2px solid #000;
-	border-radius: 10px;
-}
-
-.DiaryDay {
-	background-color: lightblue;
-}
-
-.DiaryNote textarea {
-	width: 90%;
-	margin: 10px;
-	height: 100px;
-}
-
-.DiaryNote button {
-	margin: 10px;
-	width: 100px;
-	height: 30px;
-}
-*/
