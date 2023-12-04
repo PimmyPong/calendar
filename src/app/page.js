@@ -10,7 +10,7 @@ export default function Home() {
 	const [month, setMonth] = useState(new Date().getMonth());
 	const [year, setYear] = useState(new Date().getFullYear());
 	const [day, setDay] = useState(new Date().getDate());
-	const [diary, setDiary] = useState(new Map());
+	const [diary, setDiary] = useState({});
 	// const [diary, setDiary] = useState({});
 	return (
 		<div>

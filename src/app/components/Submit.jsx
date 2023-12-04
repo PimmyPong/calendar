@@ -5,42 +5,37 @@ import Day from "./Day.jsx";
 export default function Submit({ diary, setDiary, year, month, day }) {
 	//add "" to convert the numerical values of year, month, and day to strings before concatenation.
 	const key = "" + year + month + day;
-
-	// Use the || operator to default to an empty string if the key doesn't exist
-	const entry = diary[key] || { text: "", disabled: false };
-
-	function handleClick(e) {
-		e.preventDefault();
-
-		setDiary((prevDiary) =>
-			// Create a new object using the spread operator, updating the entry for the current date
-			({ ...prevDiary, [key]: { ...entry, disabled: true } })
-
-		);
+	if (document.getElementById("note") && !(key in diary)) {
+		document.getElementById("note").value = "";
 	}
 
+	// Use the || operator to default to an empty string if the key doesn't exist
+	const entry = diary[key];
+	
+	function handleClick(e) {
+		if (e.target.value) e.preventDefault();
+		const text = document.getElementById("note").value;
+		setDiary((prevDiary) =>
+			// Create a new object using the spread operator, updating the entry for the current date
+			({ ...prevDiary, [key]: text })
+		);
+	}
 
 	return (
 		<div>
 			<textarea
+				id="note"
 				type="text"
+				value={diary[key]}
 				placeholder="Type something..."
-				className={`text-box ${entry.disabled ? "turnBlue-textarea" : ""}`}
-				value={entry.text}
-				onChange={(e) =>
-					setDiary((prevDiary) => ({
-						...prevDiary,
-						[key]: { ...entry, text: e.target.value },
-					}))
-				}
-				disabled={entry.disabled}></textarea>
+				className={`text-box ${entry ? "turnBlue-textarea" : ""}`}
+				disabled={entry}>
+				{entry}
+			</textarea>
 
 			<br />
 
-			<button
-				className="submit"
-				onClick={handleClick}
-				disabled={entry.disabled}>
+			<button className="submit" onClick={handleClick} disabled={entry}>
 				Submit
 			</button>
 			{/* <button 

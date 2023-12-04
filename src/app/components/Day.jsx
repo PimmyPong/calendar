@@ -11,18 +11,19 @@ export default function Day({ day, setDay, month, year, diary }) {
 	if (month == 1 /*february*/) {
 		n = leapYear(year) ? 29 : 28;
 	}
+
 	
-	const key = "" + year + month + day;/*????*/
 	// i ==day 1 to day.length
+	const key = "" + year + month + day; /*????*/
 	const days = [];
+	
 	for (let i = 1; i <= n; i++) {
 		const dayClass = i == day ? "selected-day" : "day";
-		
+
 		days.push(
 			<div className={dayClass} onClick={() => setDay(i)}>
 				<span>{i}</span>
-				{/* {diary.has[key] && <span>💌</span>}
-				💥 */}
+				{(""+year+month+i) in diary && <span>💌</span>}
 			</div>
 		);
 	}
