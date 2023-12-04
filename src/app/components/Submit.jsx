@@ -2,15 +2,7 @@
 import { useState } from "react";
 import Day from "./Day.jsx";
 
-export default function Submit({
-	diary,
-	setDiary,
-	year,
-	month,
-	day,
-	setMarkedDay,
-	markedDay,
-}) {
+export default function Submit({ diary, setDiary, year, month, day }) {
 	//add "" to convert the numerical values of year, month, and day to strings before concatenation.
 	const key = "" + year + month + day;
 
@@ -23,15 +15,17 @@ export default function Submit({
 		setDiary((prevDiary) =>
 			// Create a new object using the spread operator, updating the entry for the current date
 			({ ...prevDiary, [key]: { ...entry, disabled: true } })
+
 		);
 	}
+
 
 	return (
 		<div>
 			<textarea
 				type="text"
 				placeholder="Type something..."
-				className={`text-box ${entry.disabled ? "blue-textarea" : ""}`}
+				className={`text-box ${entry.disabled ? "turnBlue-textarea" : ""}`}
 				value={entry.text}
 				onChange={(e) =>
 					setDiary((prevDiary) => ({
@@ -49,6 +43,16 @@ export default function Submit({
 				disabled={entry.disabled}>
 				Submit
 			</button>
+			{/* <button 
+			id="edit-del"
+			onClick={edit}
+			disabled={entry.disabled}
+			>Edit</button>
+			<button 
+			id="edit-del"
+			onClick={edit}
+			disabled={entry.disabled}
+			>Delete</button> */}
 		</div>
 	);
 }

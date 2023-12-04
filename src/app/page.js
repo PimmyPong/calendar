@@ -4,16 +4,14 @@ import Month from "./components/Month.jsx";
 import Submit from "./components/Submit.jsx";
 import Year from "./components/Year.jsx";
 import Day from "./components/Day.jsx";
-import React, { useState } from "react";
+import React, { useState } from "react";   
 
 export default function Home() {
 	const [month, setMonth] = useState(new Date().getMonth());
 	const [year, setYear] = useState(new Date().getFullYear());
 	const [day, setDay] = useState(new Date().getDate());
 	const [diary, setDiary] = useState(new Map());
-	const [markedDay, setMarkedDay] = useState({});
 	// const [diary, setDiary] = useState({});
-	console.log(markedDay);
 	return (
 		<div>
 			<h1 className="diary">Diary</h1>
@@ -25,8 +23,8 @@ export default function Home() {
 				month={month}
 				year={year}
 				diary={diary}
-				markedDay={markedDay}
-				setMarkedDay={{ setMarkedDay }}
+				
+			
 			/>
 			<Submit
 				diary={diary}
@@ -34,7 +32,7 @@ export default function Home() {
 				day={day}
 				month={month}
 				year={year}
-				setMarkedDay={setMarkedDay}
+			
 			/>
 		</div>
 	);
