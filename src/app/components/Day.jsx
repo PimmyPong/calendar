@@ -1,5 +1,4 @@
 "use client";
-import validator from "is-my-date-valid";
 
 function leapYear(year) {
 	return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
@@ -12,18 +11,15 @@ export default function Day({ day, setDay, month, year, diary }) {
 		n = leapYear(year) ? 29 : 28;
 	}
 
-	
-	// i ==day 1 to day.length
-	const key = "" + year + month + day; /*????*/
 	const days = [];
-	
+	// i ==day 1 to day.length
 	for (let i = 1; i <= n; i++) {
 		const dayClass = i == day ? "selected-day" : "day";
 
 		days.push(
 			<div className={dayClass} onClick={() => setDay(i)}>
 				<span>{i}</span>
-				{(""+year+month+i) in diary && <span>💌</span>}
+				{"" + year + month + i in diary && <span>💌</span>}
 			</div>
 		);
 	}

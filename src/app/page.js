@@ -4,7 +4,7 @@ import Month from "./components/Month.jsx";
 import Submit from "./components/Submit.jsx";
 import Year from "./components/Year.jsx";
 import Day from "./components/Day.jsx";
-import React, { useState } from "react";   
+import React, { useState } from "react";
 
 export default function Home() {
 	const [month, setMonth] = useState(new Date().getMonth());
@@ -17,22 +17,13 @@ export default function Home() {
 			<h1 className="diary">Diary</h1>
 			<Month month={month} setMonth={setMonth} />
 			<Year year={year} setYear={setYear} />
-			<Day
-				day={day}
-				setDay={setDay}
-				month={month}
-				year={year}
-				diary={diary}
-				
-			
-			/>
+			<Day day={day} setDay={setDay} month={month} year={year} diary={diary} />
 			<Submit
 				diary={diary}
 				setDiary={setDiary}
 				day={day}
 				month={month}
 				year={year}
-			
 			/>
 		</div>
 	);

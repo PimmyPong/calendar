@@ -9,7 +9,6 @@ export default function Submit({ diary, setDiary, year, month, day }) {
 		document.getElementById("note").value = "";
 	}
 
-	// Use the || operator to default to an empty string if the key doesn't exist
 	const entry = diary[key];
 	
 	function handleClick(e) {
